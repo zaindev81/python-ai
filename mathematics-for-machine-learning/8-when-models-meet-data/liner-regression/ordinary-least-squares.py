@@ -55,4 +55,7 @@ if __name__ == "__main__":
     X = rng.random((100, 1))
     y = 3 * X[:, 0] + 2 + 0.1 * rng.normal(size=100)
 
+
     ols(X, y)
+
+    # y = ax + b
