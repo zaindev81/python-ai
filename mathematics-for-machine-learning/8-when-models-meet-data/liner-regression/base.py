@@ -1,4 +1,5 @@
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import r2_score, mean_squared_error
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -32,6 +33,19 @@ print("Coefficient:", model.coef_, "Intercept:", model.intercept_)
 
 # Predicted values of the regression line
 y_pred = model.predict(X) # Calculate the predicted y values corresponding to X using the trained model.
+
+# R² (coefficient of determination)
+# The value ranges from 0 to 1 (the closer to 1, the better the prediction).
+# A score of 0.95 or higher indicates a very good prediction, while a score of 0.5 or lower suggests low accuracy.
+r2 = r2_score(y, y_pred) # Calculate the R² score.
+print("R² score:", r2)
+
+# MSE (Mean Squared Error)
+# The average of the squared differences between the predicted values and the actual values.
+# The smaller the value, the better (a value close to 0 indicates a perfect fit).
+mse = mean_squared_error(y, y_pred)
+print("MSE:", mse)
+
 
 # Plotting
 plt.figure(figsize=(6, 4))

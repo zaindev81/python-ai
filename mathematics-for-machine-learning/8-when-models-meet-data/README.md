@@ -16,3 +16,9 @@ uv venv
 source .venv/bin/activate
 uv sync
 ```
+
+## Examples
+
+```sh
+python3 liner-regression/ordinary-least-squares.py
+```

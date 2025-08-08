@@ -56,9 +56,52 @@ def calc4():
 
     return False
 
+# shape, reshape
+def calc5():
+    print("=" * 30)
+    arr= [[1], [2], [3]]
+    arr = np.array(arr)
+    print("arr", arr)
+    print("arr.shape", arr.shape)
+
+    # [1 2 3] → shape is (3,)
+    print("arr.reshape", arr.reshape(-1))
+    print("arr.reshape.shape", arr.reshape(-1).shape)
+
+"""
+    Original array (shape: (3, 1))
++---+       +---+
+| 1 |       | 2 |
++---+       +---+
+| 3 |       |   |
++---+       +---+
+
+As a matrix:
+[[1]
+ [2]
+ [3]]
+
+     |
+     | reshape(-1)  →  Flatten to 1D
+     v
+
+1D array (shape: (3,))
+[ 1  2  3 ]
+"""
+
+# # advertising expenses
+# X = np.array([10, 15, 20, 25, 30, 35]).reshape(-1, 1) # Convert the array into a "rows × columns" format.
+# .reshape(-1, 1)
+# Convert the array into a "rows × columns" format.
+# -1 means "automatically determine the number of rows"
+# 1 means "fix the number of columns to 1"
+
+
+
 # np.linalg
 
 calc1()
 calc2()
 calc3()
 calc4()
+calc5()
