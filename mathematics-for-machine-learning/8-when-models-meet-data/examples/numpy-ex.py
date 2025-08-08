@@ -98,7 +98,18 @@ As a matrix:
 
 
 
-# np.linalg
+# np.linspace(-5, 5, 200) creates a NumPy array of 200 equally spaced numbers between -5 and 5 (inclusive).
+# errors = np.linspace(-5, 5, 200)
+# print("Errors:", errors)
+
+
+# np.linalgj
+
+# np.random.uniform(0, 10, size=5)
+# np.random.normal(loc, scale, size=...)
+
+# mask_non_iid = (X_pop >= 0) & (X_pop <= 2)
+# idx_non_iid = np.random.choice(np.where(mask_non_iid)[0], size=100, replace=False)
 
 calc1()
 calc2()
