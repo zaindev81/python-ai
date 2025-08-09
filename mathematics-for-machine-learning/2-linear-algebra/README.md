@@ -20,5 +20,5 @@ uv sync
 ## Examples
 
 ```sh
-python3 liner-regression/ordinary-least-squares.py
+python examples/vector.py
 ```
