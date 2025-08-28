@@ -6,7 +6,7 @@
 uv init
 uv venv
 source .venv/bin/activate
-uv pip install scikit-learn numpy matplotlib pandas
+uv pip install scikit-learn numpy matplotlib pandas yfinance
 ```
 
 ## Install
@@ -21,4 +21,5 @@ uv sync
 
 ```sh
 python3 examples/housing-predict.py
+python3 examples/capm_apple_sp500.py
 ```

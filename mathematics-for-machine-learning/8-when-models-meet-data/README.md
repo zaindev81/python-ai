@@ -6,7 +6,7 @@
 uv init
 uv venv
 source .venv/bin/activate
-uv pip install scikit-learn numpy matplotlib
+uv pip install scikit-learn numpy matplotlib yfinance
 ```
 
 ## Install
