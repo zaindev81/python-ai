@@ -1,4 +1,4 @@
-# 2
+# 3
 
 ## Setup
 
@@ -20,5 +20,8 @@ uv sync
 ## Examples
 
 ```sh
+python main.py
+
+# examples
 python examples/vector.py
 ```
