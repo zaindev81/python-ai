@@ -1,5 +1,7 @@
 # Jupyter Notebook
 
+- https://jupyter.org/
+
 ## Setup
 
 ```sh

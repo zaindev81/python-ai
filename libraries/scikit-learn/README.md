@@ -1,5 +1,7 @@
 # Scikit learn
 
+- https://scikit-learn.org/stable/index.html
+
 ## Setup
 
 ```sh
