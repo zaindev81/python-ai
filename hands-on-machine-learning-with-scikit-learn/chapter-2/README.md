@@ -3,16 +3,13 @@
 ## Setup
 
 ```sh
-uv init
-uv venv
 source .venv/bin/activate
-uv pip install scikit-learn numpy matplotlib pandas
+uv add scikit-learn numpy matplotlib pandas
 ```
 
 ## Install
 
 ```sh
-uv venv
 source .venv/bin/activate
 uv sync
 ```
@@ -20,7 +17,9 @@ uv sync
 ## Examples
 
 ```sh
-python examples/vector.py
-```
+# main
+python download_the_data.py
 
-- https://colab.research.google.com/github/ageron/handson-ml3/blob/main/02_end_to_end_machine_learning_project.ipynb
+# examples
+python examples/get_data.py
+```
