@@ -7,14 +7,13 @@ def fetch_mnist_data():
     mnist = fetch_openml("mnist_784", version=1, as_frame=False)  # Load MNIST
     return mnist
 
+
 def plot_digit(image_data):
     image = image_data.reshape(28, 28)
     plt.imshow(image, cmap="binary")    # Display grayscale image
     plt.axis("off")                     # Hide axes
 
 def main():
-    print("Hello from chapter-3!")
-
     # Fetch the MNIST dataset
     mnist = fetch_mnist_data()
 

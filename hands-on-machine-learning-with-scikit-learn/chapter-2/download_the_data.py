@@ -84,6 +84,8 @@ def main():
     print(housing_with_id.head())
     train_set, test_set = split_data_with_id_hash(housing_with_id, 0.2, "index")
 
+    # with_id["id"] = housing["longitude"] * 1000 + housing["latitude"]
+    # train_set, test_set = split_data_with_id_hash(housing_with_id, 0.2, "id")
 
 if __name__ == "__main__":
     main()
