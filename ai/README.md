@@ -1,4 +1,6 @@
-# python-ai
+# ai
+
+## Project Structure
 
 - mathematics-for-machine-learning
 - hands-on-machine-learning-with-scikit-learn

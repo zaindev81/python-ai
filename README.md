@@ -2,7 +2,7 @@
 
 A comprehensive Python learning and reference repository covering AI/ML, finance, networking, and LLM development.
 
-## 📁 Project Structure
+## Project Structure
 
 - AI & Machine Learning (`ai/`)
 - Finance (`finance/`)

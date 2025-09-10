@@ -1,1 +1,7 @@
-# python-network
+# network
+
+## Project Structure
+
+- CCNA
+- CCNP
+

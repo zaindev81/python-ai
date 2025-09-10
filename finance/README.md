@@ -1,5 +1,6 @@
-# python-finance
+# finance
+
+## Project Structure
 
 - yfinance
 - backtrader
-- interactive-brokers
