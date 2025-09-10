@@ -3,18 +3,8 @@
 ## Setup
 
 ```sh
-uv init
-uv venv
 source .venv/bin/activate
-uv pip install netmiko pyats genie ipaddress requests nornir rich scapy
-uv pip install scapy netaddr dnspython pyshark
-```
-
-## Install
-
-```sh
-uv venv
-source .venv/bin/activate
+uv add netmiko pyats genie ipaddress requests nornir rich scapy netaddr dnspython pyshark
 uv sync
 ```
 
@@ -22,8 +12,6 @@ uv sync
 
 ```sh
 python examples/osi-tcp-ip.py
-
-python examples/vector.py
 ```
 
 - https://github.com/secdev/scapy
