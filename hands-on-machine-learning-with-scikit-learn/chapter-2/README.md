@@ -24,5 +24,6 @@ uv sync
 python download_the_data.py
 
 # examples
-python examples/get_data.py
+python examples/shuffle_and_split_data.py
+python examples/get_housing_data.py
 ```

@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from zlib import crc32
 
+
 def load_housing_data():
     print("Loading housing data...")
 
@@ -45,6 +46,7 @@ def shuffle_and_split_data(data, test_ratio):
     test_indices = shuffled_indices[:test_set_size]
     train_indices = shuffled_indices[test_set_size:]
     return data.iloc[train_indices], data.iloc[test_indices]
+
 
 def main():
     housing = load_housing_data()
