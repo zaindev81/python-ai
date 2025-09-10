@@ -34,5 +34,21 @@ train_set, test_set = shuffle_and_split_data(data, 0.4)
 
 print("Train Set:")
 print(train_set)
+
+"""
+Train Set:
+   Feature Label
+3        4     D
+0        1     A
+4        5     E
+"""
+
 print("\nTest Set:")
 print(test_set)
+
+"""
+Test Set:
+   Feature Label
+2        3     C
+1        2     B
+"""

@@ -28,6 +28,10 @@ if __name__ == "__main__":
     # the total number of rows, each attribute’s type, and the number of non-null
     # values:
 
+
+    # The info() method is useful to get a quick description of the data, in particular
+    # the total number of rows, each attribute’s type, and the number of non-null
+    #
     # Shows:
     # - Total rows
     # - Column names and data types
@@ -39,6 +43,8 @@ if __name__ == "__main__":
     print(housing.info())
 
 
+    # The describe() method shows a summary of the numerical attributes
+    #
     # Shows statistical details for numeric columns:
     #   Count, mean, std, min, max, and quartiles (25%, 50%, 75%).
     print("=" * 60)
@@ -69,6 +75,11 @@ if __name__ == "__main__":
     housing_with_id = housing.reset_index()  # adds an `index` column
     print(housing_with_id.head())
 
+    """
+    You can either plot this one attribute at a time, or you can
+    call the hist() method on the whole dataset (as shown in the following code
+    example), and it will plot a histogram for each numerical attribute (see
+    """
     # print("=" * 60)
     # print("housing.hist:")
     # print("=" * 60)
