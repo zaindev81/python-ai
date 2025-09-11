@@ -1,7 +1,6 @@
 from scapy.all import IP, ICMP, sr1, ARP, Ether, srp, TCP, sniff, DHCP, BOOTP, DNS, DNSQR
-from ipaddress import ip_network
 import dns.resolver
-from ipaddress import ip_network, ip_address
+from ipaddress import ip_network, ip_address, IPv4Address
 import random
 
 """
@@ -21,8 +20,10 @@ def ping_host(dst="8.8.8.8", timeout=2):
 
     Ethernet → IP → ICMP → Data
 
-    IP Layer
-    └─ ICMP Layer
+    Ethernet (Layer 2: Data Link)
+    └─ IP (Layer 3: Network)
+    └─ ICMP (Part of IP Layer)
+        └─ Data (Payload)
 
     ifconfig | grep "inet " | grep -v 127.0.0.1
     """
@@ -37,18 +38,33 @@ def ping_host(dst="8.8.8.8", timeout=2):
         return None
 
 
-def subnet_info(cidr: str):
-    net = ip_network(cidr, strict=False) # Network Object
-    hosts = list(net.hosts())
-    print("CIDR:", cidr)
-    # print("net:", net)
-    # print("hosts:", hosts)
+def subnet_calc(net_str: str):
+    net = ip_network(net_str, strict=False)
+    print(f"Network:      {net}")
+    print(f"Version:      IPv{net.version}")
+    print(f"Netmask:      {net.netmask}")
 
-    print("Network:", net.network_address)
-    print("Broadcast:", net.broadcast_address)
-    print("Mask:", net.netmask, "(Prefix:", net.prefixlen, ")")
-    print("Host count:", len(hosts))
-    print("First/Last host:", hosts[0], hosts[-1])
+    if net.version == 4:
+        wildcard_int = int(IPv4Address("255.255.255.255")) ^ int(net.netmask)
+        wildcard = IPv4Address(wildcard_int)
+    else:
+        wildcard = "n/a"
+
+    print(f"Wildcard:     {wildcard}")
+    print(f"Broadcast:    {net.broadcast_address if net.version == 4 else 'n/a'}")
+
+    if net.num_addresses > 2:
+        hosts = list(net.hosts())
+        print(f"First host:   {hosts[0]}")
+        print(f"Last host:    {hosts[-1]}")
+        print(f"Host count:   {len(hosts)}")
+    else:
+        print("First host:   n/a")
+        print("Last host:    n/a")
+        print("Host count:   0")
+
+    if net.version == 4 and net.prefixlen <= 30:
+        print(f"Subnets /30:  {list(net.subnets(new_prefix=30))[:2]} ... (sample)")
 
 
 def arp_resolve(target_ip, iface=None):
@@ -174,11 +190,14 @@ if __name__ == "__main__":
     ping_host("8.8.8.8")
     print_break()
     print("Subnet Info for /24:")
-    subnet_info("192.168.1.0/24")
+    subnet_calc("192.168.1.0/24")
     print_break()
     print("Subnet Info for /27:")
-    subnet_info("192.168.1.0/27")
+    subnet_calc("192.168.1.0/27")
     print_break()
+    # print("Subnet Info for /64:")
+    # subnet_calc("2001:db8::/64")
+    # print_break()
 
     arp_resolve("192.168.1.1")
     print_break()
@@ -201,6 +220,3 @@ if __name__ == "__main__":
 
     sniff(filter="udp or tcp", prn=handle, iface="en0", store=False)
     print_break()
-
-
-
