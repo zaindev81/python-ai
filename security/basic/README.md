@@ -1,5 +1,5 @@
 # basic
 
 ```sh
-python sql-injection.py
+python examples/sql-injection.py
 ```

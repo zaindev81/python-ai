@@ -52,7 +52,6 @@ if __name__ == "__main__":
     print("\n=== Unsafe Login with SQL Injection ===")
     unsafe_login("alice' OR '1'='1", "anything")
 
-
     # WHERE A OR B AND C
     # A OR (B AND C)
 
