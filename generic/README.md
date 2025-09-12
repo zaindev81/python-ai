@@ -1,6 +1,7 @@
 # generic
 
-## Project Structure
-
-- numpy
-- pandas
+```sh
+uv init
+uv venv
+source .venv/bin/activate
+```
