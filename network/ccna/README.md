@@ -16,7 +16,8 @@ sudo python examples/00_osi_tcp_ip.py
 
 sudo python examples/ping_sweep.py
 
-python examples/vlan_config_from_csv.py 192.168.1.1 admin password vlan_list.csv cisco_ios
+# python examples/vlan_config_from_csv.py 192.168.1.1 admin password vlan_list.csv cisco_ios
+python examples/vlan_config_from_csv.py 192.168.1.1 admin cisco vlan_list.csv cisco_ios
 ```
 
 - https://github.com/secdev/scapy
