@@ -37,7 +37,10 @@ ip netns list
 
 # Display network interfaces inside each namespace
 ip netns exec ns1 ip addr
+ip netns exec ns1 ip a
+
 ip netns exec ns2 ip addr
+ip netns exec ns2 ip a
 ```
 
 **Debug**
@@ -56,6 +59,24 @@ ip netns exec ns2 ping -I veth-ns2 10.0.0.1
 ```sh
 ip netns del ns1
 ip netns del ns2
+```
+
+**Connect Namespace with Host**
+
+```sh
+[veth-ns1] <====> [veth-host]
+
+sudo ip link add veth-ns1 type veth peer name veth-host
+
+sudo ip link set veth-ns1 netns ns1
+
+sudo ip netns exec ns1 ip addr add 192.168.10.1/24 dev veth-ns1
+sudo ip netns exec ns1 ip link set veth-ns1 up
+
+sudo ip addr add 192.168.10.254/24 dev veth-host
+sudo ip link set veth-host up
+
+ping -c 3 192.168.10.1
 ```
 
 **Connect Namespaces with veth**
