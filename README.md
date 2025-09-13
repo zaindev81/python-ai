@@ -24,7 +24,6 @@ uv add scikit-learn numpy matplotlib
 **Activate**
 
 ```sh
-uv venv
 source .venv/bin/activate
 uv sync
 ```

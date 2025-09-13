@@ -1,7 +1,11 @@
 # generic
 
 ```sh
-uv init
-uv venv
 source .venv/bin/activate
+```
+
+**Examples**
+
+```sh
+python examples/class.py
 ```
